@@ -1,0 +1,24 @@
+<div class="divStats">
+    <h3>Meth Pass Statistics</h3>
+    <p>Total passes sold: {{ActivePasses.length + ExpiredPasses.length}}</p>
+    <p>Active passes: {{ActivePasses.length}}</p>
+    <p>Expired passes: {{ExpiredPasses.length}}</p>
+    <p>Blacklisted: {{BlacklistedPasses.length}}</p>
+    <p>Money: ~{{Money | currency:"$":0}}</p>
+</div>
+
+<p />
+
+<div class="divStats">
+    <h3>Top Sellers</h3>
+    <table class="table table-condensed">
+        <tr>
+            <th class="text-center">Seller</th>
+            <th class="text-center">Amount</th>
+        </tr>
+        <tr ng-repeat="seller in TopSellers | orderBy:'-Amount'">
+            <td class="tdCustom">{{ seller.Name }}</td>
+            <td class="tdCustom">{{ seller.Amount | currency:"$":0 }}</td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,86 @@
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+.form-signin {
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1000px;
+}
+
+.cartel-container {
+    text-align: center;
+}
+
+.customImages {
+    padding-top: 25px;
+}
+
+.topLogo {
+    background-color: #000000;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 50px;
+    padding: 50px;
+}
+
+.tableCustom {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.tdCustom {
+    white-space:nowrap;
+    overflow: hidden;
+    width: 20%;
+}
+
+.inline {
+   display:inline-block;
+   margin-right:5px;
+}
+
+.divStats {
+    background-color: #1c1e22;
+    text-align: center;
+    border-radius: 6px;
+    padding: 1px;
+    padding-bottom: 15px;
+    width: 500px;
+    position: inherit;
+    margin: auto;
+    margin-top: 25px;
+}
+
+.statsTable {
+   background-color: #1c1e22;
+}
+
+#login {
+    padding-top: 20px;
+    width: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

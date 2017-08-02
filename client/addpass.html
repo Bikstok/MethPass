@@ -1,0 +1,18 @@
+<p/>
+<form ng-submit="addPass(customer, daysPaid, seller, note)">
+    <fieldset class="form-group">
+        Customer's name: <input type="text" class="form-control" ng-model="customer" required />
+    </fieldset>
+    <fieldset class="form-group">
+        Time paid for:
+        <select class="form-control" ng-model="daysPaid" ng-init="daysPaid = 1" ng-options="option.value as option.name for option in Options">
+        </select>
+    </fieldset>
+    <fieldset class="form-group">
+        Seller: <input type="text" class="form-control" ng-model="seller" required />
+    </fieldset>
+    <fieldset class="form-group">
+        Note: <textarea class="form-control" ng-model="note"></textarea>
+    </fieldset>
+    <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+</form>

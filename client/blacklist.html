@@ -1,0 +1,54 @@
+<p />
+<div ng-show="ShowForm">
+    <form ng-submit="updatePass()">
+        <fieldset class="form-group">
+            Customer's name: <input type="text" class="form-control" ng-model="SelectedPass.Customer" required />
+        </fieldset>
+        <fieldset class="form-group">
+            Time paid for:
+            <select class="form-control" ng-model="SelectedPass.DaysPaid" name="SelectedPass.DaysPaid"
+                    ng-options="option.value as option.name for option in Options"></select>
+        </fieldset>
+        <fieldset class="form-group">
+            Seller: <input type="text" class="form-control" ng-model="SelectedPass.Seller" required />
+        </fieldset>
+        <fieldset class="form-group">
+            Note: <textarea class="form-control" ng-model="SelectedPass.Note"></textarea>
+        </fieldset>
+        <fieldset class="form-group">
+            <label>
+                <input type="checkbox" ng-model="SelectedPass.Blacklisted" /> Blacklisted
+            </label>
+        </fieldset>
+        <fieldset class="form-group inline">
+            <input type="submit" class="btn btn-primary" value="Update" />
+        </fieldset>
+        <fieldset class="form-group inline">
+            <input type="button" class="btn btn-primary btn-sm" value="Cancel" ng-click="ShowForm = false; SelectedPass = {}" />
+        </fieldset>
+        <fieldset class="form-group inline">
+            <input type="button" class="btn btn-danger btn-sm" value="Delete" ng-click="deletePass()" />
+        </fieldset>
+    </form>
+</div>
+
+<p />
+
+<div>
+    <table class="table table-hover tableCustom">
+        <tr>
+            <th>Customer</th>
+            <th>Date</th>
+            <th>Seller</th>
+            <th>Note</th>
+        </tr>
+
+        <tr ng-repeat="pass in BlacklistedPasses" ng-click="toggleEditForm(pass)"
+            ng-class="{success: pass.HoursLeft > 0, warning: pass.HoursLeft <= 0, danger: pass.Blacklisted == true}">
+            <td class="tdCustom">{{ pass.Customer }}</td>
+            <td class="tdCustom">{{ pass.PaidDate | date : 'dd-MM-yyyy' }}</td>
+            <td class="tdCustom">{{ pass.Seller }}</td>
+            <td class="tdCustom">{{ pass.Note }}</td>
+        </tr>
+    </table>
+</div>
